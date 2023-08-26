@@ -1,0 +1,22 @@
+ALGORITHM palindrome
+VAR
+    mot,motInverse : STRING;
+    estPalindrome : BOOLEAN;
+BEGIN
+    Write("entrez un mot")
+    Read(mot)
+    FOR i FROM mot.length -1 TO 0 STEP 1  DO
+        motInverse := motInverse + mot[i]
+    END_FOR
+    FOR i FROM mot.length -1 TO 0 STEP 1  DO
+        IF (mot[i] !== motInverse[i]) THEN
+            estPalindrome := faux
+            Write(estPalindrome, "le mot saisi n'est pas un palindrome")
+        ELSE
+            IF (mot[i] === motInverse[i]) THEN
+                estPalindrome := vrai
+            END_IF
+        END_IF
+    END_FOR
+    Write(estPalindrome, "le mot saisi est un palindrome")
+END
